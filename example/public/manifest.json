@@ -1,6 +1,6 @@
 {
-  "short_name": "react-dynamic-formik",
-  "name": "react-dynamic-formik",
+  "short_name": "formik-dynamic-forms",
+  "name": "formik-dynamic-forms",
   "icons": [
     {
       "src": "favicon.ico",
