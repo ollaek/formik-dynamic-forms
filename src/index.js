@@ -1,9 +1,11 @@
 import React from 'react'
 import { Formik } from 'formik'
 import { Form, Button } from 'react-bootstrap'
-import { renderInput, renderDropDown } from './helpers/FieldTypeGenerator'
+import { renderFeild } from './helpers/FieldTypeGenerator'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-datepicker/dist/react-datepicker.css'
+import './styles.module.css'
 
 export const DynamicForm = ({
   schema,
@@ -18,39 +20,19 @@ export const DynamicForm = ({
       onSubmit={submit}
       initialValues={initialValues}
     >
-      {({
-        handleSubmit,
-        handleChange,
-        handleBlur,
-        values,
-        touched,
-        isValid,
-        errors
-      }) => (
+      {({ handleSubmit, handleChange, values, touched, isValid, errors }) => (
         <Form noValidate onSubmit={handleSubmit}>
           {feilds &&
             feilds.map((field) => {
               return (
                 <Form.Row key={field.name}>
-                  {field.tag
-                    ? field.tag === 'dropdown'
-                      ? renderDropDown(
-                          field,
-                          values[field.name],
-                          errors[field.name],
-                          handleChange,
-                          handleBlur,
-                          touched[field.name]
-                        )
-                      : null
-                    : renderInput(
-                        field,
-                        values[field.name],
-                        errors[field.name],
-                        handleChange,
-                        handleBlur,
-                        touched[field.name]
-                      )}
+                  {renderFeild(
+                    field,
+                    values[field.name],
+                    errors[field.name],
+                    handleChange,
+                    touched[field.name]
+                  )}
                 </Form.Row>
               )
             })}

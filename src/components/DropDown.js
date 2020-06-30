@@ -32,7 +32,7 @@ export const DropDownComponent = ({
           )
         })}
       </Form.Control>
-      <Form.Control.Feedback type='invalid'>{error}</Form.Control.Feedback>
+      {error && <div style={{color: "red"}}>{error}</div>}
     </Form.Group>
   )
 }

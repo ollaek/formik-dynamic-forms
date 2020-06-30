@@ -1,6 +1,6 @@
 {
   "name": "formik-dynamic-forms",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A React Library for creating dynamic forms using Formik",
   "author": "ollaek",
   "license": "Ollaek",
@@ -28,7 +28,8 @@
     "formik": "^2.1.4",
     "yup": "^0.29.1",
     "react-bootstrap": "^1.0.1",
-    "bootstrap": "^4.5.0"
+    "bootstrap": "^4.5.0",
+    "react-datepicker": "3.0.0"
   },
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
@@ -53,9 +54,13 @@
     "formik": "^2.1.4",
     "yup": "^0.29.1",
     "react-bootstrap": "^1.0.1",
-    "bootstrap": "^4.5.0"
+    "bootstrap": "^4.5.0",
+    "react-datepicker": "3.0.0"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "create-react-class": "^15.6.3"
+  }
 }

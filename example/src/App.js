@@ -20,7 +20,8 @@ const App = () => {
       ),
     passwordConfirm: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Passwords must match')
-      .required('Password confirm is required')
+      .required('Password confirm is required'),
+    birthDate: Yup.date().required('Birthday is required')
   })
 
   const fields = [
@@ -62,7 +63,13 @@ const App = () => {
           text: 'Female'
         }
       ]
-    }
+    },
+     {
+       tag: 'datepicker',
+       label: 'Birth Date',
+       name: 'birthDate',
+       placeholder: 'pick a date'
+     }
   ]
 
   const onSubmit = (values) => {
@@ -73,7 +80,8 @@ const App = () => {
     name: '',
     email: '',
     password: '',
-    passwordConfirm: ''
+    passwordConfirm: '',
+    birthDate: ''
   }
 
   return (
